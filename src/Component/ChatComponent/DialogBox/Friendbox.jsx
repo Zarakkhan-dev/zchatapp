@@ -1,9 +1,9 @@
 import { useState } from "react";
-import  WaitingAcceptbox  from "../WaitingAcceptbox"
-import FriendRequestSection from "../FriendRequestSection"
+import WaitingAcceptbox from "../WaitingAcceptbox";
+import FriendRequestSection from "../FriendRequestSection";
 import SendRequestSection from "../SendRequestSection";
 const Friendbox = ({ setFriendOption }) => {
-  const[showBox,setShowbox] = useState ("");
+  const [showBox, setShowbox] = useState("");
 
   return (
     <>
@@ -22,13 +22,35 @@ const Friendbox = ({ setFriendOption }) => {
             ></i>
           </div>
           <div className="Search-bar w-1/2 mx-auto">
-          
             <div className="Button my-4 flex gap-4">
-            <button className="bg-[#6366f1] text-white  py-1 px-3 rounded-2xl hover:bg-[#6567d3] outline-none"  onClick={()=>setShowbox("pending")} >Friend Requests </button>
-            <button className="bg-[#6366f1] text-white  py-1 px-3 rounded-2xl hover:bg-[#6567d3] outline-none" onClick={()=>setShowbox("sendrequest")}>Send requests</button>
-            <button className="bg-[#6366f1] text-white  py-1 px-3 rounded-2xl hover:bg-[#6567d3] outline-none" onClick={()=>setShowbox("addfriend")}>Add Friend</button>
+              <button
+                className="bg-[#6366f1] text-white  py-1 px-3 rounded-2xl hover:bg-[#6567d3] outline-none"
+                onClick={() => setShowbox("pending")}
+              >
+                Friend Requests{" "}
+              </button>
+              <button
+                className="bg-[#6366f1] text-white  py-1 px-3 rounded-2xl hover:bg-[#6567d3] outline-none"
+                onClick={() => setShowbox("sendrequest")}
+              >
+                Send requests
+              </button>
+              <button
+                className="bg-[#6366f1] text-white  py-1 px-3 rounded-2xl hover:bg-[#6567d3] outline-none"
+                onClick={() => setShowbox("addfriend")}
+              >
+                Add Friend
+              </button>
             </div>
-                 {showBox === "" ? "":showBox === "pending" ? <FriendRequestSection/> : showBox === "sendrequest" ?< WaitingAcceptbox /> : <SendRequestSection/>  }
+            {showBox === "" ? (
+              ""
+            ) : showBox === "pending" ? (
+              <FriendRequestSection />
+            ) : showBox === "sendrequest" ? (
+              <WaitingAcceptbox />
+            ) : (
+              <SendRequestSection />
+            )}
           </div>
         </div>
       </div>
@@ -37,5 +59,3 @@ const Friendbox = ({ setFriendOption }) => {
 };
 
 export default Friendbox;
-
-

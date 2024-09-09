@@ -13,7 +13,6 @@ const SendRequestSection = () => {
   const [Users, setUsers] = useState("");
   const submission = async (event) => {
     event.preventDefault();
-
     if (text === data[0].username) {
       toast.error(`friend Not found`, {
         position: "top-right",
